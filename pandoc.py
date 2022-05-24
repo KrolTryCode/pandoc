@@ -5,7 +5,7 @@ headers = []
 
 
 def headerExisting(elem, doc):
-    if isInstance(elem, Header):
+    if isinstance(elem, Header):
         text = stringify(elem)
         if (text in headers):
             sys.stderr.write("Warning: Header `" + text + "` already exists in document\n")
@@ -13,7 +13,7 @@ def headerExisting(elem, doc):
             headers.append(text)
 
 def headerLevel(elem, doc):
-    if (isInstance(elem, Header)):
+    if (isinstance(elem, Header)):
         if (elem.level > 2):
             return Header(Str(stringify(elem).upper()), level=elem.level)
 
